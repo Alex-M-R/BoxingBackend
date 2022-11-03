@@ -26,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: Alex-M-R/BoxingBackend:latest
+          tags: alex-m-r/boxingbackend:latest
