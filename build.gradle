@@ -30,3 +30,15 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task customFatJar(type: Jar)
+{
+	manifest
+			{
+				attributes 'Main-Class': 'macklinr.BoxingApplication'
+			}
+	baseName = 'Boxing'
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	from { configurations.runtimeClasspath.collect { it.isDirectory() ? it: zipTree(it) }}
+	with jar
+}
